@@ -13,12 +13,12 @@ city = os.environ['CITY']
 city1 = "西安"
 city2 = "北京"
 birthday = os.environ['BIRTHDAY']
-birthday1 = '01-01'
-birthday2 = '01-01'
-birthday3 = '01-01'
-birthday4 = '01-01'
-birthday5 = '01-01'
-birthday6 = '01-01'
+birthday1 = 01-01
+# birthday2 = '01-01'
+# birthday3 = '01-01'
+# birthday4 = '01-01'
+# birthday5 = '01-01'
+# birthday6 = '01-01'
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
@@ -49,11 +49,11 @@ def get_birthday(d):
 
 birthday = get_birthday(birthday)
 birthday1 = get_birthday(birthday1)
-birthday2 = get_birthday(birthday2)
-birthday3 = get_birthday(birthday3)
-birthday4 = get_birthday(birthday4)
-birthday5 = get_birthday(birthday5)
-birthday6 = get_birthday(birthday6)
+# birthday2 = get_birthday(birthday2)
+# birthday3 = get_birthday(birthday3)
+# birthday4 = get_birthday(birthday4)
+# birthday5 = get_birthday(birthday5)
+# birthday6 = get_birthday(birthday6)
 
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
@@ -73,11 +73,11 @@ data = {"weather":{"value":wea},"temperature":{"value":temperature},
         "love_days":{"value":get_count()},
         "birthday_left":{"value":birthday},
         "birthday_left1":{"value":birthday1},
-        "birthday_left2":{"value":birthday2},
-        "birthday_left3":{"value":birthday3},
-        "birthday_left4":{"value":birthday4},
-        "birthday_left5":{"value":birthday5},
-        "birthday_left6":{"value":birthday6},
+#         "birthday_left2":{"value":birthday2},
+#         "birthday_left3":{"value":birthday3},
+#         "birthday_left4":{"value":birthday4},
+#         "birthday_left5":{"value":birthday5},
+#         "birthday_left6":{"value":birthday6},
         "words":{"value":get_words(), "color":get_random_color()}
         }
 res = wm.send_template(user_id, template_id, data)
