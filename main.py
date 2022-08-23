@@ -10,16 +10,16 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 
 city = os.environ['CITY']
-city1 = os.environ['CITY1']
-city2 = os.environ['CITY2']
+# city1 = os.environ['CITY1']
+# city2 = os.environ['CITY2']
 
 birthday = os.environ['BIRTHDAY']
-birthday1 = os.environ['BIRTHDAY1']
-birthday2 = os.environ['BIRTHDAY2']
-birthday3 = os.environ['BIRTHDAY3']
-birthday4 = os.environ['BIRTHDAY4']
-birthday5 = os.environ['BIRTHDAY5']
-birthday6 = os.environ['BIRTHDAY6']
+# birthday1 = os.environ['BIRTHDAY1']
+# birthday2 = os.environ['BIRTHDAY2']
+# birthday3 = os.environ['BIRTHDAY3']
+# birthday4 = os.environ['BIRTHDAY4']
+# birthday5 = os.environ['BIRTHDAY5']
+# birthday6 = os.environ['BIRTHDAY6']
 
 
 app_id = os.environ["APP_ID"]
@@ -107,8 +107,8 @@ wea, temperature= get_weather()
 
 
 data = {"weather":{"value":wea},"temperature":{"value":temperature},
-        "weather1":{"value":wea1},"temperature1":{"value":temperature1},
-        "weather2":{"value":wea2},"temperature2":{"value":temperature2},
+#         "weather1":{"value":wea1},"temperature1":{"value":temperature1},
+#         "weather2":{"value":wea2},"temperature2":{"value":temperature2},
         "love_days":{"value":get_count()},
         "birthday_left":{"value":get_birthday()},
 #         "birthday_left1":{"value":get_birthday1()},
