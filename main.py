@@ -42,6 +42,17 @@ def get_weather():
   return weather['weather'], math.floor(weather['temp'])
 # ,weather1['weather'], math.floor(weather1['temp']),weather2['weather'], math.floor(weather2['temp'])
 
+def get_weather1():
+  url1 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city1
+#   res = requests.get(url).json()
+  res1 = requests.get(url1).json()
+#   res2 = requests.get(url2).json()
+#   weather = res['data']['list'][0]
+  weather1 = res1['data']['list'][0]
+#   weather2 = res2['data']['list'][0]
+  return weather1['weather'], math.floor(weather1['temp'])
+# ,weather1['weather'], math.floor(weather1['temp']),weather2['weather'], math.floor(weather2['temp'])
+
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
   return delta.days
@@ -104,10 +115,10 @@ wm = WeChatMessage(client)
 
 # wea, temperature,wea1, temperature1,wea2, temperature2 = get_weather()
 wea, temperature= get_weather()
-
+wea1, temperature1= get_weather1()
 
 data = {"weather":{"value":wea},"temperature":{"value":temperature},
-#         "weather1":{"value":wea1},"temperature1":{"value":temperature1},
+        "weather1":{"value":wea1},"temperature1":{"value":temperature1},
 #         "weather2":{"value":wea2},"temperature2":{"value":temperature2},
         "love_days":{"value":get_count()},
         "birthday_left":{"value":get_birthday()},
