@@ -22,7 +22,7 @@ birthday6 = '01-01'
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
-user_id = os.environ["USER_ID"]
+user_id = os.environ["USER_ID","USER_ID1"]
 template_id = os.environ["TEMPLATE_ID"]
 
 
