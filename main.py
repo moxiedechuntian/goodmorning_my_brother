@@ -10,16 +10,16 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 
 city = os.environ['CITY']
-# city1 = os.environ['CITY1']
-# city2 = os.environ['CITY2']
+city1 = os.environ['CITY1']
+city2 = os.environ['CITY2']
 
 birthday = os.environ['BIRTHDAY']
-# birthday1 = os.environ['BIRTHDAY1']
-# birthday2 = os.environ['BIRTHDAY2']
-# birthday3 = os.environ['BIRTHDAY3']
-# birthday4 = os.environ['BIRTHDAY4']
-# birthday5 = os.environ['BIRTHDAY5']
-# birthday6 = os.environ['BIRTHDAY6']
+birthday1 = os.environ['BIRTHDAY1']
+birthday2 = os.environ['BIRTHDAY2']
+birthday3 = os.environ['BIRTHDAY3']
+birthday4 = os.environ['BIRTHDAY4']
+birthday5 = os.environ['BIRTHDAY5']
+birthday6 = os.environ['BIRTHDAY6']
 
 
 app_id = os.environ["APP_ID"]
@@ -43,7 +43,9 @@ def get_weather():
 # ,weather1['weather'], math.floor(weather1['temp']),weather2['weather'], math.floor(weather2['temp'])
 
 def get_weather1():
+  # url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   url1 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city1
+#   url2 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city2
 #   res = requests.get(url).json()
   res1 = requests.get(url1).json()
 #   res2 = requests.get(url2).json()
@@ -118,7 +120,7 @@ wea, temperature= get_weather()
 wea1, temperature1= get_weather1()
 
 data = {"weather":{"value":wea},"temperature":{"value":temperature},
-        "weather1":{"value":wea1},"temperature1":{"value":temperature1},
+#         "weather1":{"value":wea1},"temperature1":{"value":temperature1},
 #         "weather2":{"value":wea2},"temperature2":{"value":temperature2},
         "love_days":{"value":get_count()},
         "birthday_left":{"value":get_birthday()},
@@ -130,6 +132,10 @@ data = {"weather":{"value":wea},"temperature":{"value":temperature},
 #         "birthday_left6":{"value":get_birthday6()},
         "words":{"value":get_words(), "color":get_random_color()}
         }
-res = wm.send_template(user_id, template_id, data)
+data1 = {
+    # "weather":{"value":wea},"temperature":{"value":temperature},
+        "weather1":{"value":wea1},"temperature1":{"value":temperature1},
+        }
+res = wm.send_template(user_id, template_id, data,data1)
 print(res)
 
