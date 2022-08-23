@@ -34,8 +34,8 @@ def get_weather(a):
   return weather['weather'], math.floor(weather['temp']), math.floor(weather['high']), math.floor(weather['low']), weather['date']
 
 wea, temperature,high,low,date= get_weather(city)
-wea1, temperature1,high1,low1,date1= get_weather(city1)
-wea2, temperature2,high2,low2,date2= get_weather(city2)
+wea1, temperature1,high1,low1= get_weather(city1)
+wea2, temperature2,high2,low2= get_weather(city2)
 
 
 def get_count():
@@ -68,7 +68,7 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 
-data = {"date":{"value":date},"date1":{"value":date1},"date2":{"value":date2},
+data = {"date":{"value":date},
         "weather":{"value":wea},"temperature":{"value":temperature},"high":{"value":high},"low":{"value":low},
         "weather1":{"value":wea1},"temperature1":{"value":temperature1},"high1":{"value":high1},"low1":{"value":low1},
         "weather2":{"value":wea2},"temperature2":{"value":temperature2},"high2":{"value":high2},"low":{"value":low2},
