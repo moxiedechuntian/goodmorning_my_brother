@@ -31,9 +31,9 @@ def get_weather(a):
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + a
   res = requests.get(url).json()
   weather = res['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp']), math.floor(weather['high']), math.floor(weather['low']), weather['date']
+  return weather['weather'], math.floor(weather['temp']), math.floor(weather['high']), math.floor(weather['low'])
 
-wea, temperature,high,low,date = get_weather(city)
+wea, temperature,high,low = get_weather(city)
 wea1, temperature1,high1,low1 = get_weather(city1)
 wea2, temperature2,high2,low2 = get_weather(city2)
 
@@ -68,7 +68,7 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 
-data = {"date":{"value":date},
+data = {
         "weather":{"value":wea},"temperature":{"value":temperature},"high":{"value":high},"low":{"value":low},
         "weather1":{"value":wea1},"temperature1":{"value":temperature1},"high1":{"value":high1},"low1":{"value":low1},
         "weather2":{"value":wea2},"temperature2":{"value":temperature2},"high2":{"value":high2},"low":{"value":low2},
