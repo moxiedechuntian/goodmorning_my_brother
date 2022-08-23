@@ -10,7 +10,7 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 
 city = os.environ['CITY']
-# city1 = os.environ['CITY1']
+city1 = os.environ['CITY1']
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
@@ -18,17 +18,15 @@ app_secret = os.environ["APP_SECRET"]
 user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
-def get_weather():
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
+
+def get_weather(a):
+  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + a
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   return weather['weather'], math.floor(weather['temp'])
 
-# def get_weather1():
-#   url1 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city1
-#   res1 = requests.get(url1).json()
-#   weather1 = res1['data']['list'][0]
-#   return weather1['weather'], math.floor(weather1['temp'])
+wea, temperature= get_weather(city)
+wea1, temperature1= get_weather(city1)
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -52,14 +50,17 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 
-wea, temperature= get_weather()
-# wea1, temperature1= get_weather1()
-
-data = {"weather":{"value":wea},"temperature":{"value":temperature}
-        }
-data1 = {
+data = {"weather":{"value":wea},"temperature":{"value":temperature},
+        "weather1":{"value":wea1},"temperature1":{"value":temperature1},
+#         "weather2":{"value":wea2},"temperature2":{"value":temperature2},
         "love_days":{"value":get_count()},
         "birthday_left":{"value":get_birthday()},
+#         "birthday_left1":{"value":get_birthday1()},
+#         "birthday_left2":{"value":get_birthday2()},
+#         "birthday_left3":{"value":get_birthday3()},
+#         "birthday_left4":{"value":get_birthday4()},
+#         "birthday_left5":{"value":get_birthday5()},
+#         "birthday_left6":{"value":get_birthday6()},
         "words":{"value":get_words(), "color":get_random_color()}
         }
 res = wm.send_template(user_id, template_id, data,data1)
