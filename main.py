@@ -31,15 +31,16 @@ template_id = os.environ["TEMPLATE_ID"]
 
 def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
-  url1 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city1
-  url2 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city2
+#   url1 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city1
+#   url2 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city2
   res = requests.get(url).json()
-  res1 = requests.get(url1).json()
-  res2 = requests.get(url2).json()
+#   res1 = requests.get(url1).json()
+#   res2 = requests.get(url2).json()
   weather = res['data']['list'][0]
-  weather1 = res1['data']['list'][0]
-  weather2 = res2['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp']),weather1['weather'], math.floor(weather1['temp']),weather2['weather'], math.floor(weather2['temp'])
+#   weather1 = res1['data']['list'][0]
+#   weather2 = res2['data']['list'][0]
+  return weather['weather'], math.floor(weather['temp'])
+# ,weather1['weather'], math.floor(weather1['temp']),weather2['weather'], math.floor(weather2['temp'])
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
