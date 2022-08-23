@@ -11,7 +11,7 @@ start_date = os.environ['START_DATE']
 
 city = os.environ['CITY']
 city1 = os.environ['CITY1']
-# city2 = os.environ['CITY2']
+city2 = os.environ['CITY2']
 
 birthday = os.environ['BIRTHDAY']
 # birthday1 = os.environ['BIRTHDAY1']
@@ -31,21 +31,15 @@ template_id = os.environ["TEMPLATE_ID"]
 
 def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
-  res = requests.get(url).json()
-  weather = res['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp'])
-
-def get_weather1():
   url1 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city1
+  url2 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city2
+  res = requests.get(url).json()
   res1 = requests.get(url1).json()
+  res2 = requests.get(url2).json()
+  weather = res['data']['list'][0]
   weather1 = res1['data']['list'][0]
-  return weather1['weather'], math.floor(weather1['temp'])
-
-# def get_weather2():
-#   url2 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city2
-#   res2 = requests.get(url2).json()
-#   weather2 = res2['data']['list'][0]
-#   return weather2['weather'], math.floor(weather2['temp'])
+  weather2 = res2['data']['list'][0]
+  return weather['weather'], math.floor(weather['temp']),weather1['weather'], math.floor(weather1['temp']),weather2['weather'], math.floor(weather2['temp'])
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -107,13 +101,11 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 
-wea, temperature = get_weather()
-wea1, temperature1 = get_weather1()
-# wea2, temperature2 = get_weather2()
+wea, temperature,wea1, temperature1,wea2, temperature2 = get_weather()
 
 data = {"weather":{"value":wea},"temperature":{"value":temperature},
         "weather1":{"value":wea1},"temperature1":{"value":temperature1},
-#         "weather2":{"value":wea2},"temperature2":{"value":temperature2},
+        "weather2":{"value":wea2},"temperature2":{"value":temperature2},
         "love_days":{"value":get_count()},
 #         "birthday_left":{"value":get_birthday()},
 #         "birthday_left1":{"value":get_birthday1()},
