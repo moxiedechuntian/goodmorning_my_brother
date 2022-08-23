@@ -12,7 +12,7 @@ start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 #city1 = os.environ['CITY1']
 city1 = "西安"
-
+birthday = os.environ['birthdat']
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
