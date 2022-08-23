@@ -33,9 +33,9 @@ def get_weather(a):
   weather = res['data']['list'][0]
   return weather['weather'], math.floor(weather['temp']), math.floor(weather['high']), math.floor(weather['low']), weather['date']
 
-wea, temperature,high,low,date= get_weather(city)
-wea1, temperature1,high1,low1= get_weather(city1)
-wea2, temperature2,high2,low2= get_weather(city2)
+wea, temperature,high,low,date = get_weather(city)
+wea1, temperature1,high1,low1 = get_weather(city1)
+wea2, temperature2,high2,low2 = get_weather(city2)
 
 
 def get_count():
