@@ -22,7 +22,9 @@ birthday6 = '01-01'
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
-user_id = os.environ["USER_ID","USER_ID1"]
+user_id = os.environ["USER_ID"]
+user_id1 = os.environ["USER_ID1"]
+
 template_id = os.environ["TEMPLATE_ID"]
 
 
@@ -80,6 +82,6 @@ data = {"weather":{"value":wea},"temperature":{"value":temperature},
         "birthday_left6":{"value":birthday6},
         "words":{"value":get_words(), "color":get_random_color()}
         }
-res = wm.send_template(user_id, template_id, data)
+res = wm.send_template(user_id,user_id1, template_id, data)
 print(res)
 
