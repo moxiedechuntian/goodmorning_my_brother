@@ -39,7 +39,7 @@ def get_weather():
   weather = res['data']['list'][0]
   weather1 = res1['data']['list'][0]
   weather2 = res2['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp']),weather1['weather1'], math.floor(weather1['temp']),weather2['weather2'], math.floor(weather2['temp'])
+  return weather['weather'], math.floor(weather['temp']),weather1['weather'], math.floor(weather1['temp']),weather2['weather'], math.floor(weather2['temp'])
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -104,8 +104,8 @@ wm = WeChatMessage(client)
 wea, temperature,wea1, temperature1,wea2, temperature2 = get_weather()
 
 data = {"weather":{"value":wea},"temperature":{"value":temperature},
-        "weather1":{"value":wea1},"temperature1":{"value":temperature1},
-        "weather2":{"value":wea2},"temperature2":{"value":temperature2},
+#         "weather1":{"value":wea1},"temperature1":{"value":temperature1},
+#         "weather2":{"value":wea2},"temperature2":{"value":temperature2},
         "love_days":{"value":get_count()},
 #         "birthday_left":{"value":get_birthday()},
 #         "birthday_left1":{"value":get_birthday1()},
