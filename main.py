@@ -1,4 +1,4 @@
-from datetime import date, datetime,timedelta
+from datetime import date, datetime
 import math
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage, WeChatTemplate
@@ -69,7 +69,7 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 
 data = {
-        "date":{"value":today.strftime('%Y年%m月%d日')},
+#         "date":{"value":today.strftime('%Y年%m月%d日')},
         "weather":{"value":wea},"temperature":{"value":temperature},"high":{"value":high},"low":{"value":low},
         "weather1":{"value":wea1},"temperature1":{"value":temperature1},"high1":{"value":high1},"low1":{"value":low1},
         "weather2":{"value":wea2},"temperature2":{"value":temperature2},"high2":{"value":high2},"low":{"value":low2},
