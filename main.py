@@ -72,7 +72,7 @@ data = {
         "date":{"value":today.strftime('%Y年%m月%d日')},
         "weather":{"value":wea},"temperature":{"value":temperature},"high":{"value":high},"low":{"value":low},
         "weather1":{"value":wea1},"temperature1":{"value":temperature1},"high1":{"value":high1},"low1":{"value":low1},
-        "weather2":{"value":wea2},"temperature2":{"value":temperature2},"high2":{"value":high2},"low":{"value":low2},
+        "weather2":{"value":wea2},"temperature2":{"value":temperature2},"high2":{"value":high2},"low":{"value2":low2},
         "love_days":{"value":get_count()},
         "birthday_left":{"value":birthday},
         "birthday_left1":{"value":birthday1},
