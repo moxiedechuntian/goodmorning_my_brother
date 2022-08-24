@@ -6,7 +6,7 @@ import requests
 import os
 import random
 
-today = datetime.now()
+today = datetime.now()+timedalta(hours=8)
 start_date = os.environ['START_DATE']
 
 city = os.environ['CITY']
@@ -22,8 +22,8 @@ birthday6 = '02-03'
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
-user_id = os.environ["USER_ID"]
-# user_ids = os.environ["USER_ID"].split("\n")
+# user_id = os.environ["USER_ID"]
+user_ids = os.environ["USER_ID"].split("\n")
 template_id = os.environ["TEMPLATE_ID"]
 
 
@@ -69,6 +69,7 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 
 data = {
+        "date":{"value":today.strftime('%Y年%m月%d日')}
         "weather":{"value":wea},"temperature":{"value":temperature},"high":{"value":high},"low":{"value":low},
         "weather1":{"value":wea1},"temperature1":{"value":temperature1},"high1":{"value":high1},"low1":{"value":low1},
         "weather2":{"value":wea2},"temperature2":{"value":temperature2},"high2":{"value":high2},"low":{"value":low2},
@@ -82,6 +83,10 @@ data = {
         "birthday_left6":{"value":birthday6},
         "words":{"value":get_words(), "color":get_random_color()}
         }
-res = wm.send_template(user_id, template_id, data)
-print(res)
 
+count=0
+for user_id in user_ids:
+  res = wm.send_template(user_id, template_id, data)
+  count+=1
+# print(res)
+print("发送了"+str(count)+"条消息")
