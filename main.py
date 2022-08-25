@@ -69,18 +69,18 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 
 data = {
-        "date":{"value":today.strftime('%Y年%m月%d日')},
-        "weather":{"value":wea},"temperature":{"value":temperature},"high":{"value":high},"low":{"value":low},
-        "weather1":{"value":wea1},"temperature1":{"value":temperature1},"high1":{"value":high1},"low1":{"value":low1},
-        "weather2":{"value":wea2},"temperature2":{"value":temperature2},"high2":{"value":high2},"low2":{"value2":low2},
-        "love_days":{"value":get_count()},
-        "birthday_left":{"value":birthday},
-        "birthday_left1":{"value":birthday1},
-        "birthday_left2":{"value":birthday2},
-        "birthday_left3":{"value":birthday3},
-        "birthday_left4":{"value":birthday4},
-        "birthday_left5":{"value":birthday5},
-        "birthday_left6":{"value":birthday6},
+        "date":{"value":today.strftime('%Y年%m月%d日'), "color":get_random_color()},
+        "weather":{"value":wea, "color":get_random_color()},"temperature":{"value":temperature, "color":get_random_color()},"high":{"value":high, "color":get_random_color()},"low":{"value":low, "color":get_random_color()},
+        "weather1":{"value":wea1, "color":get_random_color()},"temperature1":{"value":temperature1, "color":get_random_color()},"high1":{"value":high1, "color":get_random_color()},"low1":{"value":low1, "color":get_random_color()},
+        "weather2":{"value":wea2, "color":get_random_color()},"temperature2":{"value":temperature2, "color":get_random_color()},"high2":{"value":high2, "color":get_random_color()},"low2":{"value2":low2, "color":get_random_color()},
+        "love_days":{"value":get_count(), "color":get_random_color()},
+        "birthday_left":{"value":birthday, "color":get_random_color()},
+        "birthday_left1":{"value":birthday1, "color":get_random_color()},
+        "birthday_left2":{"value":birthday2, "color":get_random_color()},
+        "birthday_left3":{"value":birthday3, "color":get_random_color()},
+        "birthday_left4":{"value":birthday4, "color":get_random_color()},
+        "birthday_left5":{"value":birthday5, "color":get_random_color()},
+        "birthday_left6":{"value":birthday6, "color":get_random_color()},
         "words":{"value":get_words(), "color":get_random_color()}
         }
 
