@@ -57,7 +57,7 @@ birthday5 = get_birthday(birthday5)
 birthday6 = get_birthday(birthday6)
 
 def get_words():
-  words = requests.get("https://api.shadiao.pro/pyq")
+  words = requests.get("https://api.shadiao.pro/du")
   if words.status_code != 200:
     return get_words()
   return words.json()['data']['text']
