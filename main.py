@@ -12,6 +12,7 @@ start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 city1 = "西安"
 city2 = "北京"
+city3 = "太原"
 birthday = os.environ['BIRTHDAY']
 birthday1 = "06-01"
 birthday2 = '11-12'
@@ -36,7 +37,7 @@ def get_weather(a):
 wea, temperature,high,low = get_weather(city)
 wea1, temperature1,high1,low1 = get_weather(city1)
 wea2, temperature2,high2,low2 = get_weather(city2)
-
+wea3, temperature3,high3,low3 = get_weather(city3)
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -72,7 +73,8 @@ data = {
         "date":{"value":today.strftime('%Y年%m月%d日'), "color":get_random_color()},
         "weather":{"value":wea, "color":get_random_color()},"temperature":{"value":temperature, "color":get_random_color()},"high":{"value":high, "color":get_random_color()},"low":{"value":low, "color":get_random_color()},
         "weather1":{"value":wea1, "color":get_random_color()},"temperature1":{"value":temperature1, "color":get_random_color()},"high1":{"value":high1, "color":get_random_color()},"low1":{"value":low1, "color":get_random_color()},
-        "weather2":{"value":wea2, "color":get_random_color()},"temperature2":{"value":temperature2, "color":get_random_color()},"high2":{"value":high2, "color":get_random_color()},"low2":{"value2":low2, "color":get_random_color()},
+        "weather2":{"value":wea2, "color":get_random_color()},"temperature2":{"value":temperature2, "color":get_random_color()},"high2":{"value":high2, "color":get_random_color()},"low2":{"value":low2, "color":get_random_color()},
+        "weather3":{"value":wea3, "color":get_random_color()},"temperature3":{"value":temperature3, "color":get_random_color()},"high3":{"value":high3, "color":get_random_color()},"low2":{"value":low3, "color":get_random_color()},
         "love_days":{"value":get_count(), "color":get_random_color()},
         "birthday_left":{"value":birthday, "color":get_random_color()},
         "birthday_left1":{"value":birthday1, "color":get_random_color()},
