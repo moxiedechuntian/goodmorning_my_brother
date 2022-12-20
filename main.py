@@ -10,10 +10,9 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 
 city = os.environ['CITY']
-city1 = "西安"
+city1 = "成都"
 city2 = "北京"
-city3 = "太原"
-city4 = "合肥"
+
 birthday = os.environ['BIRTHDAY']
 birthday1 = "06-01"
 birthday2 = '11-12'
