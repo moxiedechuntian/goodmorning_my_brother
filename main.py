@@ -73,8 +73,6 @@ data = {
         "weather":{"value":wea, "color":get_random_color()},"temperature":{"value":temperature, "color":get_random_color()},"high":{"value":high, "color":get_random_color()},"low":{"value":low, "color":get_random_color()},
         "weather1":{"value":wea1, "color":get_random_color()},"temperature1":{"value":temperature1, "color":get_random_color()},"high1":{"value":high1, "color":get_random_color()},"low1":{"value":low1, "color":get_random_color()},
         "weather2":{"value":wea2, "color":get_random_color()},"temperature2":{"value":temperature2, "color":get_random_color()},"high2":{"value":high2, "color":get_random_color()},"low2":{"value":low2, "color":get_random_color()},
-        "weather3":{"value":wea3, "color":get_random_color()},"temperature3":{"value":temperature3, "color":get_random_color()},"high3":{"value":high3, "color":get_random_color()},"low3":{"value":low3, "color":get_random_color()},
-        "weather4":{"value":wea4, "color":get_random_color()},"temperature4":{"value":temperature4, "color":get_random_color()},"high4":{"value":high4, "color":get_random_color()},"low4":{"value":low4, "color":get_random_color()},
         "love_days":{"value":get_count(), "color":get_random_color()},
         "birthday_left":{"value":birthday, "color":get_random_color()},
         "birthday_left1":{"value":birthday1, "color":get_random_color()},
