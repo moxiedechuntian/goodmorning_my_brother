@@ -37,8 +37,6 @@ def get_weather(a):
 wea, temperature,high,low = get_weather(city)
 wea1, temperature1,high1,low1 = get_weather(city1)
 wea2, temperature2,high2,low2 = get_weather(city2)
-wea3, temperature3,high3,low3 = get_weather(city3)
-wea4, temperature4,high4,low4 = get_weather(city4)
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
